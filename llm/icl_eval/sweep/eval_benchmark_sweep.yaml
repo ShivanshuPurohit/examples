@@ -1,4 +1,3 @@
-
 base_config:
   integrations:
     - integration_type: git_repo
@@ -50,7 +49,6 @@ sweep_config:
       key: '8'
       value: 8
  
-
   parameters.icl_tasks:
     -
       key:  lambada
