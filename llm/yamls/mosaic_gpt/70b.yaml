@@ -1,6 +1,6 @@
 data_remote: &data_remote ./my-copy-c4
 data_local: &data_local ./my-copy-c4
-max_seq_len: &max_seq_len 2048
+max_seq_len: &max_seq_len 4096
 tokenizer_name: &tokenizer_name gpt2
 
 # Run Name
@@ -111,15 +111,18 @@ callbacks:
   lr_monitor: {}
   memory_monitor: {}
 
-# loggers:
-#   wandb: {}
+loggers:
+  wandb:
+    project: mcli-test
+    entity: shiv
+    group: 70B
 
 # Checkpoint to local filesystem or remote object store
-# save_interval: 10000ba
-# save_num_checkpoints_to_keep: 1  # Important, this cleans up checkpoints saved to DISK
-# save_folder: ./{run_name}/checkpoints
+save_interval: 1000ba
+save_num_checkpoints_to_keep: 5 # Important, this cleans up checkpoints saved to DISK
+# save_folder: /mnt/nvme/checkppoints/{run_name}/checkpoints
 # save_folder: s3://my-bucket/my-folder/{run_name}/checkpoints
 
 # Load from local filesystem or remote object store
-# load_path: ./gpt-70b/checkpoints/latest-rank{rank}.pt
+load_path: /mnt/nvme/checkppoints/gpt-70b/checkpoints/latest-rank{rank}.pt
 # load_path: s3://my-bucket/my-folder/gpt-70b/checkpoints/latest-rank{rank}.pt
