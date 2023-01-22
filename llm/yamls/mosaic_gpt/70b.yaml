@@ -124,5 +124,5 @@ save_num_checkpoints_to_keep: 5 # Important, this cleans up checkpoints saved to
 # save_folder: s3://my-bucket/my-folder/{run_name}/checkpoints
 
 # Load from local filesystem or remote object store
-load_path: /mnt/nvme/checkppoints/gpt-70b/checkpoints/latest-rank{rank}.pt
+# load_path: /mnt/nvme/checkpoints/gpt-70b/checkpoints/latest-rank{rank}.pt
 # load_path: s3://my-bucket/my-folder/gpt-70b/checkpoints/latest-rank{rank}.pt
